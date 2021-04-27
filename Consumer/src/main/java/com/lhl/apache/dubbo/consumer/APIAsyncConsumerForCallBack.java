@@ -10,7 +10,8 @@ import org.apache.dubbo.rpc.protocol.dubbo.FutureAdapter;
 
 /**
  * 由于用future的get()方法，会导致业务阻塞
- * 所以，dubbo提供了回调方法
+ * 所以，提供了回调方法
+ * 不能满足多个Future协同工作
  * @author lvhonglei
  */
 public class APIAsyncConsumerForCallBack {
@@ -36,12 +37,12 @@ public class APIAsyncConsumerForCallBack {
         ((FutureAdapter)RpcContext.getContext().getFuture()).getFuture().setCallback(new ResponseCallback(){
             @Override
             public void done(Object response) {
-
+                System.out.println("result:" + response);
             }
 
             @Override
             public void caught(Throwable exception) {
-
+                System.out.println("error:" + exception.getLocalizedMessage());
             }
         });
     }
