@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
  *
  * @author lvhonglei
  */
-public class APIAsyncCounsumerForComplatableFuture {
+public class ApiAsyncCounsumerForComplatableFuture {
 
     public static void main(String[] args) throws InterruptedException {
         //1)创建服务引用对象，并设置数据

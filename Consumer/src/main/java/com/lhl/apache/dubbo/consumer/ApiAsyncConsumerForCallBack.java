@@ -14,7 +14,7 @@ import org.apache.dubbo.rpc.protocol.dubbo.FutureAdapter;
  * 不能满足多个Future协同工作
  * @author lvhonglei
  */
-public class APIAsyncConsumerForCallBack {
+public class ApiAsyncConsumerForCallBack {
 
     public static void main(String[] args){
         //1)创建实例，并设置属性

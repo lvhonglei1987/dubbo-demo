@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
  * 异步调用,利用Future实现
  * 缺点，在调用get()方法后，业务会阻塞
  */
-public class APIAsyncConsumer {
+public class ApiAsyncConsumer {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         //1)创建引用实例，并设置属性
         ReferenceConfig<GreetingService> referenceConfig = new ReferenceConfig<>();

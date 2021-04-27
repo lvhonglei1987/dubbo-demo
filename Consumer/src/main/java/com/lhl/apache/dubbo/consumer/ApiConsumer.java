@@ -10,7 +10,7 @@ import org.apache.dubbo.rpc.RpcContext;
  * 同步调用服务
  * @author lvhonglei
  */
-public class APIConsumer {
+public class ApiConsumer {
 
     public static void main(String[] args) {
         //9)创建服务引用对象实例
