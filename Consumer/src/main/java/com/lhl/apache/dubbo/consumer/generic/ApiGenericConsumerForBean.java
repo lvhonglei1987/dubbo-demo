@@ -1,6 +1,5 @@
 package com.lhl.apache.dubbo.consumer.generic;
 
-import com.lhl.apache.dubbo.sdk.GreetingService;
 import org.apache.dubbo.common.beanutil.JavaBeanDescriptor;
 import org.apache.dubbo.common.beanutil.JavaBeanSerializeUtil;
 import org.apache.dubbo.config.ApplicationConfig;
