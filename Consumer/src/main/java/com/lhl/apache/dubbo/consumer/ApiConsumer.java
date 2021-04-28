@@ -12,7 +12,7 @@ import org.apache.dubbo.rpc.RpcContext;
  */
 public class ApiConsumer {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //9)创建服务引用对象实例
         ReferenceConfig<GreetingService> referenceConfig = new ReferenceConfig<GreetingService>();
         //10)设置应用程序信息
@@ -34,6 +34,8 @@ public class ApiConsumer {
         RpcContext.getContext().setAttachment("company","alibaba");
         //17)调用服务
         System.out.println(greetingService.sayHello("world"));
+
+        Thread.currentThread().join();
     }
 
 }
