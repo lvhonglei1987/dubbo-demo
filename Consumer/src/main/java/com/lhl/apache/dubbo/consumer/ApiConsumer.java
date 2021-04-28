@@ -23,15 +23,15 @@ public class ApiConsumer {
         referenceConfig.setInterface(GreetingService.class);
         referenceConfig.setTimeout(5000);
         //13)设置自定义负载均衡策略与集群容错策略
-        referenceConfig.setLoadbalance("myLoadBalance");
-        referenceConfig.setCluster("myBroadcast");
+//        referenceConfig.setLoadbalance("myLoadBalance");
+//        referenceConfig.setCluster("myBroadcast");
         //14)设置服务分组与版本
         referenceConfig.setVersion("1.0.0");
         referenceConfig.setGroup("dubbo");
         //15)引用服务
         GreetingService greetingService = referenceConfig.get();
         //16)设置隐式参数
-        RpcContext.getContext().setAttachment("company","alibaba");
+        RpcContext.getContext().setAttachment("company","lhl");
         //17)调用服务
         System.out.println(greetingService.sayHello("world"));
 

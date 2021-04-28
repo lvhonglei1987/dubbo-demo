@@ -8,6 +8,7 @@ Apache Dubbo Demo
 - Zookeeper 3.4.14
 - Apache Dubbo 2.7.0
 - FastJson 1.2.75
+- curator 2.12.0
 
 # Consumer
 > 消费方的所有demo
@@ -17,4 +18,7 @@ Apache Dubbo Demo
 
 # SDK
 > 用来存放服务接口，是一个二方包
+
+# Q&A
+> zookeeper 与 curator有版本问题，需要兼容，否则报错
 
