@@ -22,3 +22,6 @@ Apache Dubbo Demo
 # Q&A
 > zookeeper 与 curator有版本问题，需要兼容，否则报错
 
+# gitHub
+> https://github.com/lvhonglei1987/dubbo-demo.git
+
