@@ -27,7 +27,7 @@ public class ApiConsumerForProviderAsync {
         GreetingServiceAsync greetingServiceAsync = referenceConfig.get();
 
         //3)设置隐式参数
-        RpcContext.getContext().setAttachment("company","alibaba");
+        RpcContext.getContext().setAttachment("company","lhl");
 
         //4)获取Future并设置回调
         CompletableFuture<String> future = greetingServiceAsync.sayHello("World");

@@ -19,6 +19,8 @@ public class ApiGenericConsumerForBean {
         referenceConfig.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
         referenceConfig.setVersion("1.0.0");
         referenceConfig.setGroup("dubbo");
+        //加上超时时间
+        referenceConfig.setTimeout(30000);
 
         //2)设置泛化引用，并且泛化类型为bean
         referenceConfig.setInterface("com.lhl.apache.dubbo.sdk.GreetingService");
@@ -29,7 +31,7 @@ public class ApiGenericConsumerForBean {
 
         //4)泛化调用
         JavaBeanDescriptor param = JavaBeanSerializeUtil.serialize("world");
-        Object result = genericService.$invoke("sayHello",new String[]{"java.long.String"},new Object[]{param});
+        Object result = genericService.$invoke("sayHello",new String[]{"java.lang.String"},new Object[]{param});
 
         //5)结果反序列化
         result = JavaBeanSerializeUtil.deserialize((JavaBeanDescriptor) result);

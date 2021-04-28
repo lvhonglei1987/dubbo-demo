@@ -1,4 +1,4 @@
-package com.lhl.apache.dubbo.provider.mock;
+package com.lhl.apache.dubbo.sdk;
 
 import com.lhl.apache.dubbo.sdk.GreetingService;
 import com.lhl.apache.dubbo.sdk.PoJo;

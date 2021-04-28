@@ -11,7 +11,6 @@ import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.rpc.service.GenericService;
 
 import java.io.IOException;
-import java.io.Serializable;
 
 /**
  * generic = nativejava
@@ -25,13 +24,14 @@ public class ApiGenericConsumerForNativeJava {
         referenceConfig.setRegistry(new RegistryConfig("zookeeper://127.0.0.1:2181"));
         referenceConfig.setVersion("1.0.0");
         referenceConfig.setGroup("dubbo");
+        referenceConfig.setTimeout(30000);
 
         //2)设置为泛化引用
         referenceConfig.setInterface("com.lhl.apache.dubbo.sdk.GreetingService");
         referenceConfig.setGeneric("nativejava");
 
-        //3)用GenericService替换所有接口
-        GenericService genericService = referenceConfig.get();
+        //3)用GenericService替换所有接口,必须是greetingService,否则报错
+        GenericService greetingService = referenceConfig.get();
         UnsafeByteArrayOutputStream out = new UnsafeByteArrayOutputStream();
 
         //4)泛化调用
@@ -40,7 +40,7 @@ public class ApiGenericConsumerForNativeJava {
                 .serialize(null,out)
                 .writeObject("world");
 
-        Object result = genericService.$invoke("sayHello",new String[]{"java.lang.String"},new Object[]{out.toByteArray()});
+        Object result = greetingService.$invoke("sayHello",new String[]{"java.lang.String"},new Object[]{out.toByteArray()});
 
         //5)打印结果，需要反序列化
         UnsafeByteArrayInputStream in = new UnsafeByteArrayInputStream((byte[]) result);

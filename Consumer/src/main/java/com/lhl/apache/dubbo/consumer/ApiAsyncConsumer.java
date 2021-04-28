@@ -22,6 +22,8 @@ public class ApiAsyncConsumer {
         referenceConfig.setInterface(GreetingService.class);
         referenceConfig.setVersion("1.0.0");
         referenceConfig.setGroup("dubbo");
+        //添加超时时间，否则异常
+        referenceConfig.setTimeout(5000);
 
         //2)设置为异步
         referenceConfig.setAsync(Boolean.TRUE);

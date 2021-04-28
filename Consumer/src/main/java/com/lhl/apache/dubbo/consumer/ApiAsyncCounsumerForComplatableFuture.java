@@ -29,6 +29,10 @@ public class ApiAsyncCounsumerForComplatableFuture {
         referenceConfig.setAsync(Boolean.TRUE);
 
         //3)直接返回null
+        GreetingService greetingService = referenceConfig.get();
+        System.out.println(greetingService.sayHello("world"));
+
+        //4)异步执行回调
         CompletableFuture<String> future = RpcContext.getContext().getCompletableFuture();
         future.whenComplete((v,t) -> {
             if (t != null){
