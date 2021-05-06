@@ -25,3 +25,25 @@ Apache Dubbo Demo
 # gitHub
 > https://github.com/lvhonglei1987/dubbo-demo.git
 
+# zookeeper
+## 1.Mac安装zookeeper
+ [Apache Zookeeper Download](http://archive.apache.org/dist/zookeeper/)
+
+- step1 点击上面的链接进行下载
+- step2 解压文件
+- step3 设置环境变量
+> vi ~/.bash_profile 修改文件，添加如下代码，
+```bash
+export ZK_HOME=/Users/lvhonglei/Downloads/zookeeper-3.4.14/
+export PATH=$PATH:$M2_HOME/bin:$JETTY_HOME:$JAVA_HOME/bin:$ZK_HOME/bin
+```
+- step4 使环境变量生效
+> source ~/.bash_profile
+- step5 启动zookeeper服务
+> zkServer.sh start
+- step6 查看启动状态
+> zkServer.sh status
+- step7 停止zookeeper服务
+> zkServer.sh stop
+
+
