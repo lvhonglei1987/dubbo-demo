@@ -9,6 +9,7 @@
         <module name="Consumer" />
         <module name="Provider" />
         <module name="SDK" />
+        <module name="Spi" />
       </profile>
     </annotationProcessing>
   </component>

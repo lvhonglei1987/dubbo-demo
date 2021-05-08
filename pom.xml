@@ -12,6 +12,7 @@
     <module>Consumer</module>
     <module>Provider</module>
     <module>SDK</module>
+      <module>Spi</module>
   </modules>
 
   <name>dubbo-demo</name>
